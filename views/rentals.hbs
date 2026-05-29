@@ -1,0 +1,145 @@
+<h1>Rentals</h1>
+
+<p>Browse, add, update, and delete rental transactions.</p>
+
+<h2>Browse Rentals</h2>
+<table>
+    <thead>
+        <tr>
+            <th>rentalID</th>
+            <th>client</th>
+            <th>vehicle</th>
+            <th>location</th>
+            <th>pickupDate</th>
+            <th>returnDate</th>
+            <th>actualReturnDate</th>
+            <th>totalCost</th>
+            <th>status</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rentals}}
+        <tr>
+            <td>{{this.rentalID}}</td>
+            <td>{{this.client}}</td>
+            <td>{{this.vehicle}}</td>
+            <td>{{this.locationName}}</td>
+            <td>{{this.pickupDate}}</td>
+            <td>{{this.returnDate}}</td>
+            <td>{{this.actualReturnDate}}</td>
+            <td>{{this.totalCost}}</td>
+            <td>{{this.status}}</td>
+            <td><button>Delete</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+
+<h2>Add Rental</h2>
+<form>
+    <label>Client:</label>
+    <select name="clientID" required>
+        <option value="">Select a Client</option>
+        <option value="1">Emma Thompson</option>
+        <option value="2">Michael Rodriguez</option>
+        <option value="3">Sophia Chen</option>
+    </select>
+
+    <label>Vehicle:</label>
+    <select name="vehicleID" required>
+        <option value="">Select a Vehicle</option>
+        <option value="1">Ferrari 488 Spider</option>
+        <option value="2">Lamborghini Huracan</option>
+        <option value="3">Rolls Royce Ghost</option>
+    </select>
+
+    <label>Location:</label>
+    <select name="locationID" required>
+        <option value="">Select a Location</option>
+        <option value="1">Beverly Hills</option>
+        <option value="2">Newport Beach</option>
+        <option value="3">Irvine</option>
+    </select>
+
+    <label>Pickup Date:</label>
+    <input type="date" name="pickupDate" required>
+
+    <label>Return Date:</label>
+    <input type="date" name="returnDate" required>
+
+    <label>Actual Return Date:</label>
+    <input type="date" name="actualReturnDate">
+
+    <label>Total Cost:</label>
+    <input type="number" step="0.01" name="totalCost">
+
+    <label>Status:</label>
+    <select name="status">
+        <option value="Reserved">Reserved</option>
+        <option value="Active">Active</option>
+        <option value="Completed">Completed</option>
+        <option value="Cancelled">Cancelled</option>
+    </select>
+
+    <input type="submit" value="Add Rental">
+</form>
+
+<h2>Update Rental</h2>
+<form>
+    <label>Rental to Update:</label>
+    <select name="rentalID" required>
+        <option value="">Select a Rental</option>
+        <option value="1">Rental #1</option>
+        <option value="2">Rental #2</option>
+        <option value="3">Rental #3</option>
+    </select>
+
+    <label>New Client:</label>
+    <select name="clientID">
+        <option value="">Select a Client</option>
+        <option value="1">Emma Thompson</option>
+        <option value="2">Michael Rodriguez</option>
+        <option value="3">Sophia Chen</option>
+    </select>
+
+    <label>New Vehicle:</label>
+    <select name="vehicleID">
+        <option value="">Select a Vehicle</option>
+        <option value="1">Ferrari 488 Spider</option>
+        <option value="2">Lamborghini Huracan</option>
+        <option value="3">Rolls Royce Ghost</option>
+    </select>
+
+    <label>New Location:</label>
+    <select name="locationID">
+        <option value="">Select a Location</option>
+        <option value="1">Beverly Hills</option>
+        <option value="2">Newport Beach</option>
+        <option value="3">Irvine</option>
+    </select>
+
+    <label>New Pickup Date:</label>
+    <input type="date" name="pickupDate">
+
+    <label>New Return Date:</label>
+    <input type="date" name="returnDate">
+
+    <label>New Actual Return Date:</label>
+    <input type="date" name="actualReturnDate">
+
+    <label>New Total Cost:</label>
+    <input type="number" step="0.01" name="totalCost">
+
+    <label>New Status:</label>
+    <select name="status">
+        <option value="">Select Status</option>
+        <option value="Reserved">Reserved</option>
+        <option value="Active">Active</option>
+        <option value="Completed">Completed</option>
+        <option value="Cancelled">Cancelled</option>
+    </select>
+
+    <input type="submit" value="Update Rental">
+</form>

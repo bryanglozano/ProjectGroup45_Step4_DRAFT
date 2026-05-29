@@ -1,0 +1,77 @@
+<h1>Employee Client Relationships</h1>
+
+<p>Browse, add, update, and delete employee-client relationship records.</p>
+
+<h2>Browse Employee Client Relationships</h2>
+<table>
+    <thead>
+        <tr>
+            <th>employeeClientID</th>
+            <th>employee</th>
+            <th>client</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each employeeClients}}
+        <tr>
+            <td>{{this.employeeClientID}}</td>
+            <td>{{this.employee}}</td>
+            <td>{{this.client}}</td>
+            <td><button>Delete</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<h2>Add Employee Client Relationship</h2>
+<form>
+    <label>Employee:</label>
+    <select name="employeeID" required>
+        <option value="">Select an Employee</option>
+        <option value="1">Daniel Morris</option>
+        <option value="2">Sarah Kim</option>
+        <option value="3">Marcus Lee</option>
+    </select>
+
+    <label>Client:</label>
+    <select name="clientID" required>
+        <option value="">Select a Client</option>
+        <option value="1">Emma Thompson</option>
+        <option value="2">Michael Rodriguez</option>
+        <option value="3">Sophia Chen</option>
+    </select>
+
+    <input type="submit" value="Add Relationship">
+</form>
+
+<h2>Update Employee Client Relationship</h2>
+<form>
+    <label>Relationship to Update:</label>
+    <select name="employeeClientID" required>
+        <option value="">Select a Relationship</option>
+        <option value="1">Daniel Morris - Emma Thompson</option>
+        <option value="2">Sarah Kim - Michael Rodriguez</option>
+        <option value="3">Marcus Lee - Sophia Chen</option>
+    </select>
+
+    <label>New Employee:</label>
+    <select name="employeeID">
+        <option value="">Select an Employee</option>
+        <option value="1">Daniel Morris</option>
+        <option value="2">Sarah Kim</option>
+        <option value="3">Marcus Lee</option>
+    </select>
+
+    <label>New Client:</label>
+    <select name="clientID">
+        <option value="">Select a Client</option>
+        <option value="1">Emma Thompson</option>
+        <option value="2">Michael Rodriguez</option>
+        <option value="3">Sophia Chen</option>
+    </select>
+
+    <input type="submit" value="Update Relationship">
+</form>
+
+<p><a href="/delete-demo">Delete Demo Relationship</a></p>

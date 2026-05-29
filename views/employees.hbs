@@ -1,0 +1,106 @@
+<h1>Employees</h1>
+
+<p>Browse, add, update, and delete employee records.</p>
+
+<h2>Browse Employees</h2>
+<table>
+    <thead>
+        <tr>
+            <th>employeeID</th>
+            <th>location</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>hireDate</th>
+            <th>role</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each employees}}
+        <tr>
+            <td>{{this.employeeID}}</td>
+            <td>{{this.locationName}}</td>
+            <td>{{this.firstName}}</td>
+            <td>{{this.lastName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.phone}}</td>
+            <td>{{this.hireDate}}</td>
+            <td>{{this.role}}</td>
+            <td><button>Delete</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+
+<h2>Add Employee</h2>
+<form>
+    <label>Location:</label>
+    <select name="locationID" required>
+        <option value="">Select a Location</option>
+        <option value="1">Beverly Hills</option>
+        <option value="2">Newport Beach</option>
+        <option value="3">Irvine</option>
+    </select>
+
+    <label>First Name:</label>
+    <input type="text" name="firstName" required>
+
+    <label>Last Name:</label>
+    <input type="text" name="lastName" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Phone:</label>
+    <input type="text" name="phone" required>
+
+    <label>Hire Date:</label>
+    <input type="date" name="hireDate" required>
+
+    <label>Role:</label>
+    <input type="text" name="role" required>
+
+    <input type="submit" value="Add Employee">
+</form>
+
+<h2>Update Employee</h2>
+<form>
+    <label>Employee to Update:</label>
+    <select name="employeeID" required>
+        <option value="">Select an Employee</option>
+        <option value="1">1 - Daniel Morris</option>
+        <option value="2">2 - Sarah Kim</option>
+        <option value="3">3 - Marcus Lee</option>
+    </select>
+
+    <label>New Location:</label>
+    <select name="locationID">
+        <option value="">Select a Location</option>
+        <option value="1">Beverly Hills</option>
+        <option value="2">Newport Beach</option>
+        <option value="3">Irvine</option>
+    </select>
+
+    <label>New First Name:</label>
+    <input type="text" name="firstName">
+
+    <label>New Last Name:</label>
+    <input type="text" name="lastName">
+
+    <label>New Email:</label>
+    <input type="email" name="email">
+
+    <label>New Phone:</label>
+    <input type="text" name="phone">
+
+    <label>New Hire Date:</label>
+    <input type="date" name="hireDate">
+
+    <label>New Role:</label>
+    <input type="text" name="role">
+
+    <input type="submit" value="Update Employee">
+</form>

@@ -1,0 +1,73 @@
+<h1>Locations</h1>
+
+<p>Browse, add, update, and delete rental branch locations.</p>
+
+<h2>Browse Locations</h2>
+<table>
+    <thead>
+        <tr>
+            <th>locationID</th>
+            <th>locationName</th>
+            <th>address</th>
+            <th>city</th>
+            <th>phone</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each locations}}
+        <tr>
+            <td>{{this.locationID}}</td>
+            <td>{{this.locationName}}</td>
+            <td>{{this.address}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.phone}}</td>
+            <td><button>Delete</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+
+<h2>Add Location</h2>
+<form>
+    <label>Location Name:</label>
+    <input type="text" name="locationName" required>
+
+    <label>Address:</label>
+    <input type="text" name="address" required>
+
+    <label>City:</label>
+    <input type="text" name="city" required>
+
+    <label>Phone:</label>
+    <input type="text" name="phone">
+
+    <input type="submit" value="Add Location">
+</form>
+
+<h2>Update Location</h2>
+<form>
+    <label>Location to Update:</label>
+    <select name="locationID" required>
+        <option value="">Select a Location</option>
+        <option value="1">1 - Beverly Hills</option>
+        <option value="2">2 - Newport Beach</option>
+        <option value="3">3 - Irvine</option>
+    </select>
+
+    <label>New Location Name:</label>
+    <input type="text" name="locationName">
+
+    <label>New Address:</label>
+    <input type="text" name="address">
+
+    <label>New City:</label>
+    <input type="text" name="city">
+
+    <label>New Phone:</label>
+    <input type="text" name="phone">
+
+    <input type="submit" value="Update Location">
+</form>
+
